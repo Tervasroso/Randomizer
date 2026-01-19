@@ -1,6 +1,21 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: f4f4f4;
   color: #333;
   text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.divi {
+  border-style: dotted;
+}
+
+.inline {
+  display: inline-block;
+  width: 50%;
 }
