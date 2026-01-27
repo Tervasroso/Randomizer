@@ -48,19 +48,6 @@ function unCheckBox(id, name, rows) {
   }
 }
 
-// function ifChecked(id, name) {
-//   if ((document.getElementById(id).checked = true)) {
-//     for (let i = 0; i < rows.length - 1; i++) {
-//       if (rows[i].group == name) {
-//         rows[i][id].count = 1;
-//       } else if (rows[i].group == name) {
-//         document.getElementById(id).checked = false;
-//         rows[i][id].count = 0;
-//       }
-//     }
-//   }
-// }
-
 function ifChecked(id, name) {
   if (document.getElementById(id).checked == true) {
     checkBox(id, name, rows);
@@ -70,4 +57,11 @@ function ifChecked(id, name) {
     unCheckBox(id, name, rows);
     console.log(rows);
   }
+}
+
+function renderSelections(id) {
+  document.getElementById(id).innerHTML = '<form action="">';
+  ('<input type="checkbox" id="selfirst">');
+  ('<label for="selfirst">7+0</label>');
+  ("</form>");
 }

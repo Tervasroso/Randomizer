@@ -14,10 +14,18 @@
     </div>
     <div class="container">
       <div class="divi inline left">
-        <p class="gameMode">Vakio 1</p>
+        <h4>Vakio 1</h4>
       </div>
       <div class="divi inline right">
-        <p>Valitse pelimuoto (Järjestelmä vai Harava?)</p>
+        <h4>Valitse pelimuoto (Järjestelmä vai Harava?)</h4>
+        <form class="gameMode">
+          <label for="gameMode">Valitse pelimuoto:</label>
+          <select name="gameMode" id="gameMode">
+          <option value="Järjestelmä" id="selectFirst" onload="renderSelections(id)">Järjestelmä</option>
+          <option value="Harava -1" id="selectSecond" onchange="renderSelections(id)">Harava -1</option>
+          <option value="Harava -2" id="selectThird" on>Harava -2</option>
+          </select>
+        </form>
       </div>
     </div>
     <div class="container">
@@ -121,7 +129,7 @@
         </p>
       </div>
       <div class="divi inline right">
-        <p>Valinnat ja lopputulos</p>
+        <p class="selections">Valinnat ja lopputulos</p>
       </div>
     </div>
   </body>
