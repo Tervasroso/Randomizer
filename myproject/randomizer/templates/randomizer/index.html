@@ -19,7 +19,7 @@
       <div class="divi inline right">
         <h4>Valitse pelimuoto (Järjestelmä vai Harava?)</h4>
         <form class="gameMode">
-          <label for="">Valitse pelimuoto:</label>
+          <label for="gameMode">Valitse pelimuoto:</label>
           <select name="gameMode" id="gameMode" onchange="myFunction()">
           <option value="Järjestelmä" id="system" name=system>Järjestelmä</option>
           <option value="Harava1" id="rakeOne" name="rakeOne">Harava -1</option>
@@ -32,99 +32,100 @@
       <div class="divi inline left">
         <p class="targets">
           <form action="">
-            <label for="gridA">A</label>
-            <input type="checkbox" id="1" name="A" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox1"></label>
-            <input type="checkbox" id="2" name="A" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox2"></label>
-            <input type="checkbox" id="3" name="A" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox3"></label><br>
-            <label for="gridB">B</label>
-            <input type="checkbox" id="1" name="B" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox4"></label>
-            <input type="checkbox" id="2" name="B" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox5"></label>
-            <input type="checkbox" id="3" name="B" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox6"></label><br>
-            <label for="gridB">C</label>
-            <input type="checkbox" id="1" name="C" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox7"></label>
-            <input type="checkbox" id="2" name="C" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox8"></label>
-            <input type="checkbox" id="3" name="C" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox9"></label><br>
+            <label for="A">A</label>
+            <input type="checkbox" id="A1" name="A" value="" onclick="ifChecked(id,name)">
+            <label for="A1"></label>
+            <input type="checkbox" id="A2" name="A" value="" onclick="ifChecked(id,name)">
+            <label for="A2"></label>
+            <input type="checkbox" id="A3" name="A" value="" onclick="ifChecked(id,name)">
+            <label for="A3"></label><br>
+            <label for="B">B</label>
+            <input type="checkbox" id="B1" name="B" value="" onclick="ifChecked(id,name)">
+            <label for="B1"></label>
+            <input type="checkbox" id="B2" name="B" value="" onclick="ifChecked(id,name)">
+            <label for="B2"></label>
+            <input type="checkbox" id="B3" name="B" value="" onclick="ifChecked(id,name)">
+            <label for="B3"></label><br>
+            <label for="C">C</label>
+            <input type="checkbox" id="C1" name="C" value="" onclick="ifChecked(id,name)">
+            <label for="C1"></label>
+            <input type="checkbox" id="C2" name="C" value="" onclick="ifChecked(id,name)">
+            <label for="C2"></label>
+            <input type="checkbox" id="C3" name="C" value="" onclick="ifChecked(id,name)">
+            <label for="C3"></label><br>
             <label>--------------</label><br>
-            <label for="gridA">D</label>
-            <input type="checkbox" id="1" name="D" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox10"></label>
-            <input type="checkbox" id="2" name="D" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox11"></label>
-            <input type="checkbox" id="3" name="D" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox12"></label><br>
-            <label for="gridB">E</label>
-            <input type="checkbox" id="1" name="E" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox13"></label>
-            <input type="checkbox" id="2" name="E" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox14"></label>
-            <input type="checkbox" id="3" name="E" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox15"></label><br>
-            <label for="gridB">F</label>
-            <input type="checkbox" id="1" name="F" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox16"></label>
-            <input type="checkbox" id="2" name="F" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox17"></label>
-            <input type="checkbox" id="3" name="F" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox18"></label><br>
+            <label for="D">D</label>
+            <input type="checkbox" id="D1" name="D" value="" onclick="ifChecked(id,name)">
+            <label for="D1"></label>
+            <input type="checkbox" id="D2" name="D" value="" onclick="ifChecked(id,name)">
+            <label for="D2"></label>
+            <input type="checkbox" id="D3" name="D" value="" onclick="ifChecked(id,name)">
+            <label for="D3"></label><br>
+            <label for="E">E</label>
+            <input type="checkbox" id="E1" name="E" value="" onclick="ifChecked(id,name)">
+            <label for="E1"></label>
+            <input type="checkbox" id="E2" name="E" value="" onclick="ifChecked(id,name)">
+            <label for="E2"></label>
+            <input type="checkbox" id="E3" name="E" value="" onclick="ifChecked(id,name)">
+            <label for="E3"></label><br>
+            <label for="F">F</label>
+            <input type="checkbox" id="F1" name="F" value="" onclick="ifChecked(id,name)">
+            <label for="F1"></label>
+            <input type="checkbox" id="F2" name="F" value="" onclick="ifChecked(id,name)">
+            <label for="F2"></label>
+            <input type="checkbox" id="F3" name="F" value="" onclick="ifChecked(id,name)">
+            <label for="F3"></label><br>
             <label>--------------</label><br>
-            <label for="gridA">G</label>
-            <input type="checkbox" id="1" name="G" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox19"></label>
-            <input type="checkbox" id="2" name="G" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox20"></label>
-            <input type="checkbox" id="3" name="G" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox21"></label><br>
-            <label for="gridB">H</label>
-            <input type="checkbox" id="1" name="H" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox22"></label>
-            <input type="checkbox" id="2" name="H" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox23"></label>
-            <input type="checkbox" id="3" name="H" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox24"></label><br>
-            <label for="gridB">I</label>
-            <input type="checkbox" id="1" name="I" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox25"></label>
-            <input type="checkbox" id="2" name="I" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox26"></label>
-            <input type="checkbox" id="3" name="I" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox27"></label><br>
+            <label for="G">G</label>
+            <input type="checkbox" id="G1" name="G" value="" onclick="ifChecked(id,name)">
+            <label for="G1"></label>
+            <input type="checkbox" id="G2" name="G" value="" onclick="ifChecked(id,name)">
+            <label for="G2"></label>
+            <input type="checkbox" id="G3" name="G" value="" onclick="ifChecked(id,name)">
+            <label for="G3"></label><br>
+            <label for="H">H</label>
+            <input type="checkbox" id="H1" name="H" value="" onclick="ifChecked(id,name)">
+            <label for="H1"></label>
+            <input type="checkbox" id="H2" name="H" value="" onclick="ifChecked(id,name)">
+            <label for="H2"></label>
+            <input type="checkbox" id="H3" name="H" value="" onclick="ifChecked(id,name)">
+            <label for="H3"></label><br>
+            <label for="I">I</label>
+            <input type="checkbox" id="I1" name="I" value="" onclick="ifChecked(id,name)">
+            <label for="I1"></label>
+            <input type="checkbox" id="I2" name="I" value="" onclick="ifChecked(id,name)">
+            <label for="I2"></label>
+            <input type="checkbox" id="I3" name="I" value="" onclick="ifChecked(id,name)">
+            <label for="I3"></label><br>
             <label>--------------</label><br>
-            <label for="gridA">J</label>
-            <input type="checkbox" id="1" name="J" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox28"></label>
-            <input type="checkbox" id="2" name="J" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox29"></label>
-            <input type="checkbox" id="3" name="J" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox30"></label><br>
-            <label for="gridB">K</label>
-            <input type="checkbox" id="1" name="K" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox31"></label>
-            <input type="checkbox" id="2" name="K" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox32"></label>
-            <input type="checkbox" id="3" name="K" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox33"></label><br>
-            <label for="gridB">L</label>
-            <input type="checkbox" id="1" name="L" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox34"></label>
-            <input type="checkbox" id="2" name="L" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox35"></label>
-            <input type="checkbox" id="3" name="L" value="" onclick="ifChecked(id,name)"><br>
-            <label for="gridB">M</label>
-            <input type="checkbox" id="1" name="M" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox36"></label>
-            <input type="checkbox" id="2" name="M" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox37"></label>
-            <input type="checkbox" id="3" name="M" value="" onclick="ifChecked(id,name)">
-            <label for="checkbox38"></label>
+            <label for="J">J</label>
+            <input type="checkbox" id="J1" name="J" value="" onclick="ifChecked(id,name)">
+            <label for="J1"></label>
+            <input type="checkbox" id="J2" name="J" value="" onclick="ifChecked(id,name)">
+            <label for="J2"></label>
+            <input type="checkbox" id="J3" name="J" value="" onclick="ifChecked(id,name)">
+            <label for="J3"></label><br>
+            <label for="K">K</label>
+            <input type="checkbox" id="K1" name="K" value="" onclick="ifChecked(id,name)">
+            <label for="K1"></label>
+            <input type="checkbox" id="K2" name="K" value="" onclick="ifChecked(id,name)">
+            <label for="K2"></label>
+            <input type="checkbox" id="K3" name="K" value="" onclick="ifChecked(id,name)">
+            <label for="K3"></label><br>
+            <label for="L">L</label>
+            <input type="checkbox" id="L1" name="L" value="" onclick="ifChecked(id,name)">
+            <label for="L1"></label>
+            <input type="checkbox" id="L2" name="L" value="" onclick="ifChecked(id,name)">
+            <label for="L2"></label>
+            <input type="checkbox" id="L3" name="L" value="" onclick="ifChecked(id,name)">
+            <label for="L3"></label><br>
+            <label for="M">M</label>
+            <input type="checkbox" id="M1" name="M" value="" onclick="ifChecked(id,name)">
+            <label for="M1"></label>
+            <input type="checkbox" id="M2" name="M" value="" onclick="ifChecked(id,name)">
+            <label for="M2"></label>
+            <input type="checkbox" id="M3" name="M" value="" onclick="ifChecked(id,name)">
+            <label for="M3"></label>
           </form>
         </p>
       </div>

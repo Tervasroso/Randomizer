@@ -6,17 +6,17 @@ document.addEventListener("DOMContentLoaded", function () {
     </form>`;
 });
 
-Järjestelmä = `<form>
+const Järjestelmä = `<form>
     <input type="checkbox" id="selfirst">
     <label for="selfirst">7+0</label>
     </form>`;
 
-Harava1 = `<form>
+const Harava1 = `<form>
   <input type="checkbox" id="selfirst">
   <label for="selfirst">7+1</label>
   </form>`;
 
-Harava2 = `<form>
+const Harava2 = `<form>
   <input type="checkbox" id="selfirst">
   <label for="selfirst">7+2</label>
   </form>`;
@@ -25,40 +25,31 @@ ov = 0;
 tv = 0;
 
 var rows = [
-  { group: "A", 1: 0, 2: 0, 3: 0 },
-  { group: "B", 1: 0, 2: 0, 3: 0 },
-  { group: "C", 1: 0, 2: 0, 3: 0 },
-  { group: "D", 1: 0, 2: 0, 3: 0 },
-  { group: "E", 1: 0, 2: 0, 3: 0 },
-  { group: "F", 1: 0, 2: 0, 3: 0 },
-  { group: "G", 1: 0, 2: 0, 3: 0 },
-  { group: "H", 1: 0, 2: 0, 3: 0 },
-  { group: "I", 1: 0, 2: 0, 3: 0 },
-  { group: "J", 1: 0, 2: 0, 3: 0 },
-  { group: "K", 1: 0, 2: 0, 3: 0 },
-  { group: "L", 1: 0, 2: 0, 3: 0 },
-  { group: "M", 1: 0, 2: 0, 3: 0 },
+  { group: "A", A1: 0, A2: 0, A3: 0 },
+  { group: "B", B1: 0, B2: 0, B3: 0 },
+  { group: "C", C1: 0, C2: 0, C3: 0 },
+  { group: "D", D1: 0, D2: 0, D3: 0 },
+  { group: "E", E1: 0, E2: 0, E3: 0 },
+  { group: "F", E1: 0, E2: 0, E3: 0 },
+  { group: "G", G1: 0, G2: 0, G3: 0 },
+  { group: "H", H1: 0, H2: 0, H3: 0 },
+  { group: "I", I1: 0, I2: 0, I3: 0 },
+  { group: "J", J1: 0, J2: 0, J3: 0 },
+  { group: "K", K1: 0, K2: 0, K3: 0 },
+  { group: "L", L1: 0, L2: 0, L3: 0 },
+  { group: "M", M1: 0, M2: 0, M3: 0 },
 ];
 
-function checkedCount() {
-  for (let i = 0; i < rows.length, i++; ) {
-    console.log(i);
-  }
-}
-
-function checkBox(id, name, rows) {
-  rows = rows;
+function checkBox(id, name) {
   document.getElementById(id).checked = true;
   for (let i = 0; i < rows.length; i++) {
     if (rows[i].group == name) {
       rows[i][id] = 1;
     }
   }
-  return rows;
 }
 
-function unCheckBox(id, name, rows) {
-  rows = rows;
+function unCheckBox(id, name) {
   document.getElementById(id).checked = false;
   for (let i = 0; i < rows.length; i++) {
     if (rows[i].group == name) {
@@ -69,34 +60,17 @@ function unCheckBox(id, name, rows) {
 
 function ifChecked(id, name) {
   if (document.getElementById(id).checked == true) {
-    checkBox(id, name, rows);
-    console.log(rows);
+    checkBox(id, name);
+    // console.log(rows);
   }
   if (document.getElementById(id).checked == false) {
-    unCheckBox(id, name, rows);
-    console.log(rows);
+    unCheckBox(id, name);
+    // console.log(rows);
   }
 }
 
-function renderSystem() {
-  console.log("Pöö");
-  document.getElementById(id).innerHTML = `<form>
-  <input type="checkbox" id="selfirst">
-  <label for="selfirst">7+0</label>
-  </form>`;
-}
-
-function renderRakeOne() {
-  console.log("Pöö");
-  // document.getElementById("selectFirst").innerHTML = `<form>
-  // <input type="checkbox" id="rakeOne">
-  // <label for="selfirst">7+1</label>
-  // </form>`;
-  document.getElementById("selectFirst").innerHTML = "Tässäpä muutos";
-}
 function myFunction() {
   x = document.getElementById("gameMode").value;
-  console.log(x);
   if (x == "Harava1") {
     document.getElementById("selectFirst").innerHTML = Harava1;
   }
