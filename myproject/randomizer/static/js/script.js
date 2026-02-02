@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Page loaded");
   document.getElementById("selectFirst").innerHTML = `<form>
-    <input type="checkbox" id="sys70">
-    <label for="sys70">7+0</label>
-    </form>`;
+  <input type="checkbox" id="sys70">
+  <label for="sys70">7+0</label>
+  </form>`;
 });
 
 const Järjestelmä = `<form>
-    <input type="checkbox" id="sys70">
-    <label for="sys70">7+0</label>
-    </form>`;
+  <input type="checkbox" id="sys70">
+  <label for="sys70">7+0</label>
+  </form>`;
 
 const Harava1 = `<form>
   <input type="checkbox" id="rake1-70>
@@ -61,11 +61,11 @@ function unCheckBox(id, name) {
 function ifChecked(id, name) {
   if (document.getElementById(id).checked == true) {
     checkBox(id, name);
-    // console.log(rows);
+    checkSelected(name);
   }
   if (document.getElementById(id).checked == false) {
     unCheckBox(id, name);
-    // console.log(rows);
+    checkSelected(name);
   }
 }
 
@@ -79,5 +79,15 @@ function myFunction() {
   }
   if (x == "Järjestelmä") {
     document.getElementById("selectFirst").innerHTML = Järjestelmä;
+  }
+}
+
+function checkSelected(name) {
+  let values = "";
+  for (let i = 0; i < rows.length; i++) {
+    if (rows[i].group == name) {
+      values = Object.values(rows[i]);
+      console.log(values);
+    }
   }
 }
