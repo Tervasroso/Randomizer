@@ -1,24 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Page loaded");
   document.getElementById("selectFirst").innerHTML = `<form>
-    <input type="checkbox" id="selfirst">
-    <label for="selfirst">7+0</label>
+    <input type="checkbox" id="sys70">
+    <label for="sys70">7+0</label>
     </form>`;
 });
 
 const Järjestelmä = `<form>
-    <input type="checkbox" id="selfirst">
-    <label for="selfirst">7+0</label>
+    <input type="checkbox" id="sys70">
+    <label for="sys70">7+0</label>
     </form>`;
 
 const Harava1 = `<form>
-  <input type="checkbox" id="selfirst">
-  <label for="selfirst">7+1</label>
+  <input type="checkbox" id="rake1-70>
+  <label for="rake1-70">7+0</label>
   </form>`;
 
 const Harava2 = `<form>
-  <input type="checkbox" id="selfirst">
-  <label for="selfirst">7+2</label>
+  <input type="checkbox" id="rake2-70">
+  <label for="rake2-70">7+0</label>
   </form>`;
 
 ov = 0;
