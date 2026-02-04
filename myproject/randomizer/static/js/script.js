@@ -21,8 +21,36 @@ const Harava2 = `<form>
   <label for="rake2-70">7+0</label>
   </form>`;
 
-ov = 0;
-tv = 0;
+let ov = {
+  A: 0,
+  B: 0,
+  C: 0,
+  D: 0,
+  E: 0,
+  F: 0,
+  G: 0,
+  H: 0,
+  I: 0,
+  J: 0,
+  K: 0,
+  L: 0,
+  M: 0,
+};
+let tv = {
+  A: 0,
+  B: 0,
+  C: 0,
+  D: 0,
+  E: 0,
+  F: 0,
+  G: 0,
+  H: 0,
+  I: 0,
+  J: 0,
+  K: 0,
+  L: 0,
+  M: 0,
+};
 
 var rows = [
   { group: "A", A1: 0, A2: 0, A3: 0 },
@@ -74,18 +102,16 @@ function select(name) {
   for (let i = 0; i < rows.length; i++) {
     if (rows[i].group == name) {
       values = Object.values(rows[i]);
-      console.log(values);
       result = countSelected(values);
-      console.log(result);
     } else if (result == 2) {
-      ov = 1;
-      tv = 0;
+      ov[name] = 1;
+      tv[name] = 0;
     } else if (result == 3) {
-      ov = 0;
-      tv = 1;
+      ov[name] = 0;
+      tv[name] = 1;
     } else {
-      ov = 0;
-      tv = 0;
+      ov[name] = 0;
+      tv[name] = 0;
     }
   }
 }
@@ -94,12 +120,20 @@ function ifChecked(id, name) {
   if (document.getElementById(id).checked == true) {
     checkBox(id, name);
     select(name);
-    console.log("Osittain vaihdeltuja " + ov + " Täysin vaihdeltuja " + tv);
+    valuesOv = countSelected(Object.values(ov));
+    valuesTv = countSelected(Object.values(tv));
+    console.log(
+      "Osittain vaihdellut " + valuesOv + " Täysin vaihdellut " + valuesTv,
+    );
   }
   if (document.getElementById(id).checked == false) {
     unCheckBox(id, name);
     select(name);
-    console.log("Osittain vaihdeltuja " + ov + " Täysin vaihdeltuja " + tv);
+    valuesOv = countSelected(Object.values(ov));
+    valuesTv = countSelected(Object.values(tv));
+    console.log(
+      "Osittain vaihdellut " + valuesOv + " Täysin vaihdellut " + valuesTv,
+    );
   }
 }
 
