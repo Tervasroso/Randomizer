@@ -58,14 +58,48 @@ function unCheckBox(id, name) {
   }
 }
 
+function countSelected(values) {
+  var count = 0;
+  for (var i = 0; i < values.length; ++i) {
+    if (values[i] == 1) {
+      count++;
+    }
+  }
+  return count;
+}
+
+function select(name) {
+  let values = "";
+  let result = 0;
+  for (let i = 0; i < rows.length; i++) {
+    if (rows[i].group == name) {
+      values = Object.values(rows[i]);
+      console.log(values);
+      result = countSelected(values);
+      console.log(result);
+    } else if (result == 2) {
+      ov = 1;
+      tv = 0;
+    } else if (result == 3) {
+      ov = 0;
+      tv = 1;
+    } else {
+      ov = 0;
+      tv = 0;
+    }
+  }
+}
+
 function ifChecked(id, name) {
   if (document.getElementById(id).checked == true) {
     checkBox(id, name);
-    checkSelected(name);
+    select(name);
+    console.log("Osittain vaihdeltuja " + ov + " Täysin vaihdeltuja " + tv);
   }
   if (document.getElementById(id).checked == false) {
     unCheckBox(id, name);
-    checkSelected(name);
+    select(name);
+    console.log("Osittain vaihdeltuja " + ov + " Täysin vaihdeltuja " + tv);
   }
 }
 
@@ -79,15 +113,5 @@ function myFunction() {
   }
   if (x == "Järjestelmä") {
     document.getElementById("selectFirst").innerHTML = Järjestelmä;
-  }
-}
-
-function checkSelected(name) {
-  let values = "";
-  for (let i = 0; i < rows.length; i++) {
-    if (rows[i].group == name) {
-      values = Object.values(rows[i]);
-      console.log(values);
-    }
   }
 }
