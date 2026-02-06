@@ -1,23 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Page loaded");
   document.getElementById("selectFirst").innerHTML = `<form>
-  <input type="checkbox" id="sys70">
+  <input type="checkbox" id="sys70" value="70" onclick="getVal(value)">
   <label for="sys70">7+0</label>
   </form>`;
 });
 
 const Järjestelmä = `<form>
-  <input type="checkbox" id="sys70">
+  <input type="checkbox" id="sys70" value="70" onclick="getVal(value)">
   <label for="sys70">7+0</label>
   </form>`;
 
 const Harava1 = `<form>
-  <input type="checkbox" id="rake1-70>
+  <input type="checkbox" id="rake1-70" value"70" onclick="getVal(value)">
   <label for="rake1-70">7+0</label>
   </form>`;
 
 const Harava2 = `<form>
-  <input type="checkbox" id="rake2-70">
+  <input type="checkbox" id="rake2-70" value="70" onclick="getVal(value)">
   <label for="rake2-70">7+0</label>
   </form>`;
 
@@ -51,6 +51,9 @@ let tv = {
   L: 0,
   M: 0,
 };
+
+let chosenOv = 0;
+let chosenTv = 0;
 
 var rows = [
   { group: "A", A1: 0, A2: 0, A3: 0 },
@@ -148,4 +151,11 @@ function myFunction() {
   if (x == "Järjestelmä") {
     document.getElementById("selectFirst").innerHTML = Järjestelmä;
   }
+}
+
+function getVal(value) {
+  let string = value;
+  chosenOv = string.charAt(0);
+  chosenTv = string.charAt(1);
+  console.log("Järjestelmä " + chosenOv + " + " + chosenTv);
 }
