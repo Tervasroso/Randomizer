@@ -1,23 +1,47 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Page loaded");
   document.getElementById("selectFirst").innerHTML = `<form>
-  <input type="checkbox" id="sys70" value="70" onclick="getVal(value)">
+  <input type="checkbox" id="sys70" value="70" onclick="getVal(id, value)">
   <label for="sys70">7+0</label>
+  <input type="checkbox" id="sys60" value="60" onclick="getVal(id, value)">
+  <label for="sys60">6+0</label>
+  <input type="checkbox" id="sys51" value="51" onclick="getVal(id, value)">
+  <label for="sys60">5+1</label>
+  <input type="checkbox" id="sys41" value="41" onclick="getVal(id, value)">
+  <label for="sys60">4+1</label>
+  <input type="checkbox" id="sys32" value="32" onclick="getVal(id, value)">
+  <label for="sys60">3+2</label>
+  <input type="checkbox" id="sys04" value="04" onclick="getVal(id, value)">
+  <label for="sys60">0+4</label>
+  <input type="checkbox" id="sys53" value="53" onclick="getVal(id, value)">
+  <label for="sys60">5+3</label>
   </form>`;
 });
 
 const Järjestelmä = `<form>
-  <input type="checkbox" id="sys70" value="70" onclick="getVal(value)">
+  <input type="checkbox" id="sys70" value="70" onclick="getVal(id, value)">
   <label for="sys70">7+0</label>
+  <input type="checkbox" id="sys60" value="60" onclick="getVal(id, value)">
+  <label for="sys60">6+0</label>
+  <input type="checkbox" id="sys51" value="51" onclick="getVal(id, value)">
+  <label for="sys60">5+1</label>
+  <input type="checkbox" id="sys41" value="41" onclick="getVal(id, value)">
+  <label for="sys60">4+1</label>
+  <input type="checkbox" id="sys32" value="32" onclick="getVal(id, value)">
+  <label for="sys60">3+2</label>
+  <input type="checkbox" id="sys04" value="04" onclick="getVal(id, value)">
+  <label for="sys60">0+4</label>
+  <input type="checkbox" id="sys53" value="53" onclick="getVal(id, value)">
+  <label for="sys60">5+3</label>
   </form>`;
 
 const Harava1 = `<form>
-  <input type="checkbox" id="rake1-70" value"70" onclick="getVal(value)">
+  <input type="checkbox" id="rake1-70" value="70" onclick="getVal(id, value)">
   <label for="rake1-70">7+0</label>
   </form>`;
 
 const Harava2 = `<form>
-  <input type="checkbox" id="rake2-70" value="70" onclick="getVal(value)">
+  <input type="checkbox" id="rake2-70" value="70" onclick="getVal(id, value)">
   <label for="rake2-70">7+0</label>
   </form>`;
 
@@ -153,9 +177,17 @@ function myFunction() {
   }
 }
 
-function getVal(value) {
+function getVal(id, value) {
+  let mode = id;
   let string = value;
+  console.log(string);
   chosenOv = string.charAt(0);
   chosenTv = string.charAt(1);
-  console.log("Järjestelmä " + chosenOv + " + " + chosenTv);
+  if (mode.includes("rake1")) {
+    console.log("Harava (-1) " + chosenOv + " + " + chosenTv);
+  } else if (mode.includes("rake2")) {
+    console.log("Harava (-2) " + chosenOv + " + " + chosenTv);
+  } else {
+    console.log("Järjestelmä " + chosenOv + " + " + chosenTv);
+  }
 }
