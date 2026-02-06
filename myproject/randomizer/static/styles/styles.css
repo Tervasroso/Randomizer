@@ -12,7 +12,7 @@ body {
 }
 
 .divi {
-  border-style: dotted;
+  border-style: solid;
 }
 
 .inline {
@@ -21,5 +21,15 @@ body {
 }
 
 .head {
-  background-color: forestgreen;
+  background-color: rgb(68, 188, 68);
+}
+
+.formHead {
+  background-color: rgb(240, 85, 93);
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.selF {
+  padding-top: 10px;
 }
