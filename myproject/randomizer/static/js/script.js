@@ -1,47 +1,47 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Page loaded");
   document.getElementById("selectFirst").innerHTML = `<form>
-  <input type="checkbox" id="sys70" value="70" onclick="getVal(id, value)">
+  <input type="checkbox" id="s1" value="70" onclick="getVal(id, value)">
   <label for="sys70">7+0</label>
-  <input type="checkbox" id="sys60" value="60" onclick="getVal(id, value)">
+  <input type="checkbox" id="s2" value="60" onclick="getVal(id, value)">
   <label for="sys60">6+0</label>
-  <input type="checkbox" id="sys51" value="51" onclick="getVal(id, value)">
+  <input type="checkbox" id="s3" value="51" onclick="getVal(id, value)">
   <label for="sys60">5+1</label>
-  <input type="checkbox" id="sys41" value="41" onclick="getVal(id, value)">
+  <input type="checkbox" id="s4" value="41" onclick="getVal(id, value)">
   <label for="sys60">4+1</label>
-  <input type="checkbox" id="sys32" value="32" onclick="getVal(id, value)">
+  <input type="checkbox" id="s5" value="32" onclick="getVal(id, value)">
   <label for="sys60">3+2</label>
-  <input type="checkbox" id="sys04" value="04" onclick="getVal(id, value)">
+  <input type="checkbox" id="s6" value="04" onclick="getVal(id, value)">
   <label for="sys60">0+4</label>
-  <input type="checkbox" id="sys53" value="53" onclick="getVal(id, value)">
+  <input type="checkbox" id="s7" value="53" onclick="getVal(id, value)">
   <label for="sys60">5+3</label>
   </form>`;
 });
 
 const Järjestelmä = `<form>
-  <input type="checkbox" id="sys70" value="70" onclick="getVal(id, value)">
+  <input type="checkbox" id="s1" value="70" onclick="getVal(id, value)">
   <label for="sys70">7+0</label>
-  <input type="checkbox" id="sys60" value="60" onclick="getVal(id, value)">
+  <input type="checkbox" id="s2" value="60" onclick="getVal(id, value)">
   <label for="sys60">6+0</label>
-  <input type="checkbox" id="sys51" value="51" onclick="getVal(id, value)">
+  <input type="checkbox" id="s3" value="51" onclick="getVal(id, value)">
   <label for="sys60">5+1</label>
-  <input type="checkbox" id="sys41" value="41" onclick="getVal(id, value)">
+  <input type="checkbox" id="s4" value="41" onclick="getVal(id, value)">
   <label for="sys60">4+1</label>
-  <input type="checkbox" id="sys32" value="32" onclick="getVal(id, value)">
+  <input type="checkbox" id="s5" value="32" onclick="getVal(id, value)">
   <label for="sys60">3+2</label>
-  <input type="checkbox" id="sys04" value="04" onclick="getVal(id, value)">
+  <input type="checkbox" id="s6" value="04" onclick="getVal(id, value)">
   <label for="sys60">0+4</label>
-  <input type="checkbox" id="sys53" value="53" onclick="getVal(id, value)">
+  <input type="checkbox" id="s7" value="53" onclick="getVal(id, value)">
   <label for="sys60">5+3</label>
   </form>`;
 
 const Harava1 = `<form>
-  <input type="checkbox" id="rake1-70" value="70" onclick="getVal(id, value)">
+  <input type="checkbox" id="rake11" value="70" onclick="getVal(id, value)">
   <label for="rake1-70">7+0</label>
   </form>`;
 
 const Harava2 = `<form>
-  <input type="checkbox" id="rake2-70" value="70" onclick="getVal(id, value)">
+  <input type="checkbox" id="rake21" value="70" onclick="getVal(id, value)">
   <label for="rake2-70">7+0</label>
   </form>`;
 
@@ -149,18 +149,12 @@ function ifChecked(id, name) {
     select(name);
     valuesOv = countSelected(Object.values(ov));
     valuesTv = countSelected(Object.values(tv));
-    console.log(
-      "Osittain vaihdellut " + valuesOv + " Täysin vaihdellut " + valuesTv,
-    );
   }
   if (document.getElementById(id).checked == false) {
     unCheckBox(id, name);
     select(name);
     valuesOv = countSelected(Object.values(ov));
     valuesTv = countSelected(Object.values(tv));
-    console.log(
-      "Osittain vaihdellut " + valuesOv + " Täysin vaihdellut " + valuesTv,
-    );
   }
 }
 
@@ -190,4 +184,8 @@ function getVal(id, value) {
   } else {
     console.log("Järjestelmä " + chosenOv + " + " + chosenTv);
   }
+  if (document.getElementById(id).checked == true) {
+    const mode = document.createElement("div");
+    document.body.appendChild(mode);
+  } // Luo tähän diviin tekstielementti valintoja varten.
 }
