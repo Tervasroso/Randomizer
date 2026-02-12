@@ -72,10 +72,17 @@ const Harava2 = `<form>
   <label for="rake2-70">7+0</label>
   </form>`;
 
-function showSelected(chosenOv, chosenTv) {
-  const pos = document.getElementById("gMode");
-  pos.textContent = chosenOv + " + " + chosenTv;
-}
+// function showSelected(chosenOv, chosenTv) {
+//   const pos = document.getElementById("gMode");
+//   pos.textContent = chosenOv + " + " + chosenTv;
+// }
+
+valuesOv = 0;
+valuesTv = 0;
+
+let chosenOv = 0;
+let chosenTv = 0;
+
 let ov = {
   A: 0,
   B: 0,
@@ -106,9 +113,6 @@ let tv = {
   L: 0,
   M: 0,
 };
-
-let chosenOv = 0;
-let chosenTv = 0;
 
 var rows = [
   { group: "A", A1: 0, A2: 0, A3: 0 },
@@ -180,27 +184,30 @@ function ifChecked(id, name) {
     select(name);
     valuesOv = countSelected(Object.values(ov));
     valuesTv = countSelected(Object.values(tv));
+    fullFilled(valuesOv, valuesTv, chosenOv, chosenTv);
   }
   if (document.getElementById(id).checked == false) {
     unCheckBox(id, name);
     select(name);
     valuesOv = countSelected(Object.values(ov));
     valuesTv = countSelected(Object.values(tv));
+    fullFilled(valuesOv, valuesTv, chosenOv, chosenTv);
   }
+}
+function fullFilled(valuesOv, valuesTv, chosenOv, chosenTv) {
+  console.log("Käyttäjän valinnat " + valuesOv + " + " + valuesTv);
+  console.log("pelimuodon valinnat " + chosenOv + " + " + chosenTv);
 }
 
 function myFunction() {
   x = document.getElementById("gameMode").value;
   if (x == "Harava1") {
-    newElement.textContent = "";
     document.getElementById("selectFirst").innerHTML = Harava1;
   }
   if (x == "Harava2") {
-    newElement.textContent = "";
     document.getElementById("selectFirst").innerHTML = Harava2;
   }
   if (x == "Järjestelmä") {
-    newElement.textContent = "";
     document.getElementById("selectFirst").innerHTML = Järjestelmä;
   }
 }
@@ -209,16 +216,15 @@ function getVal(id, value) {
   if (document.getElementById(id).checked == true) {
     let mode = id;
     let string = value;
-    console.log(string);
     chosenOv = string.charAt(0);
     chosenTv = string.charAt(1);
     if (mode.includes("rake1")) {
-      console.log("Harava (-1) " + chosenOv + " + " + chosenTv);
+      // console.log("Harava (-1) " + chosenOv + " + " + chosenTv);
     } else if (mode.includes("rake2")) {
-      console.log("Harava (-2) " + chosenOv + " + " + chosenTv);
+      // console.log("Harava (-2) " + chosenOv + " + " + chosenTv);
     } else {
-      console.log("Järjestelmä " + chosenOv + " + " + chosenTv);
+      // console.log("Järjestelmä " + chosenOv + " + " + chosenTv);
     }
-    showSelected(chosenOv, chosenTv);
+    fullFilled(valuesOv, valuesTv, chosenOv, chosenTv);
   }
 }
