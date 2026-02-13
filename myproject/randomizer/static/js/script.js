@@ -1,74 +1,74 @@
-window.addEventListener("DOMContentLoaded", function () {
-  let choice = document.querySelectorAll('input[type="radio"]:checked');
-  let maxAllowed = 1;
+// window.addEventListener("DOMContentLoaded", function () {
+//   let choice = document.querySelectorAll('input[type="radio"]:checked');
+//   let maxAllowed = 1;
 
-  choice.forEach(function (choice) {
-    choice.addEventListener("change", function () {
-      let checkedCount = document.querySelectorAll(
-        'input[type="radio"]:checked',
-      ).length;
-      if (checkedCount > maxAllowed) {
-        this.checked = false;
-      }
-      if (checkedCount == maxAllowed) {
-        choice.forEach(function (otherCheckbox) {
-          if (!otherCheckbox.checked) {
-            otherCheckbox.disabled = true;
-          }
-        });
-      } else {
-        choice.forEach(function (otherCheckbox) {
-          otherCheckbox.disabled = false;
-        });
-      }
-    });
-  });
-});
+//   choice.forEach(function (choice) {
+//     choice.addEventListener("change", function () {
+//       let checkedCount = document.querySelectorAll(
+//         'input[type="radio"]:checked',
+//       ).length;
+//       if (checkedCount > maxAllowed) {
+//         this.checked = false;
+//       }
+//       if (checkedCount == maxAllowed) {
+//         choice.forEach(function (otherCheckbox) {
+//           if (!otherCheckbox.checked) {
+//             otherCheckbox.disabled = true;
+//           }
+//         });
+//       } else {
+//         choice.forEach(function (otherCheckbox) {
+//           otherCheckbox.disabled = false;
+//         });
+//       }
+//     });
+//   });
+// });
 
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Page loaded");
   document.getElementById("selectFirst").innerHTML = `<form>
-  <input type="radio" id="s1" value="70" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s1" value="70" name="choice" onclick="getVal(id, value)">
   <label for="sys70">7+0</label>
-  <input type="radio" id="s2" value="60" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s2" value="60" name="choice" onclick="getVal(id, value)">
   <label for="sys60">6+0</label>
-  <input type="radio" id="s3" value="51" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s3" value="51" name="choice" onclick="getVal(id, value)">
   <label for="sys60">5+1</label>
-  <input type="radio" id="s4" value="41" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s4" value="41" name="choice" onclick="getVal(id, value)">
   <label for="sys60">4+1</label>
-  <input type="radio" id="s5" value="32" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s5" value="32" name="choice" onclick="getVal(id, value)">
   <label for="sys60">3+2</label>
-  <input type="radio" id="s6" value="04" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s6" value="04" name="choice" onclick="getVal(id, value)">
   <label for="sys60">0+4</label>
-  <input type="radio" id="s7" value="53" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s7" value="53" name="choice" onclick="getVal(id, value)">
   <label for="sys60">5+3</label>
   </form>`;
 });
 
 const Järjestelmä = `<form>
-  <input type="radio" id="s1" value="70" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s1" value="70" name="choice" onclick="getVal(id, value)">
   <label for="sys70">7+0</label>
-  <input type="radio" id="s2" value="60" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s2" value="60" name="choice" onclick="getVal(id, value)">
   <label for="sys60">6+0</label>
-  <input type="radio" id="s3" value="51" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s3" value="51" name="choice" onclick="getVal(id, value)">
   <label for="sys60">5+1</label>
-  <input type="radio" id="s4" value="41" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s4" value="41" name="choice" onclick="getVal(id, value)">
   <label for="sys60">4+1</label>
-  <input type="radio" id="s5" value="32" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s5" value="32" name="choice" onclick="getVal(id, value)">
   <label for="sys60">3+2</label>
-  <input type="radio" id="s6" value="04" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s6" value="04" name="choice" onclick="getVal(id, value)">
   <label for="sys60">0+4</label>
-  <input type="radio" id="s7" value="53" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s7" value="53" name="choice" onclick="getVal(id, value)">
   <label for="sys60">5+3</label>
   </form>`;
 
 const Harava1 = `<form>
-  <input type="radio" id="rake11" value="70" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="rake11" value="70" name="choice" onclick="getVal(id, value)">
   <label for="rake1-70">7+0</label>
   </form>`;
 
 const Harava2 = `<form>
-  <input type="radio" id="rake21" value="70" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="rake21" value="70" name="choice" onclick="getVal(id, value)">
   <label for="rake2-70">7+0</label>
   </form>`;
 
@@ -234,6 +234,8 @@ function getVal(id, value) {
       // console.log("Järjestelmä " + chosenOv + " + " + chosenTv);
     }
     fullFilled(valuesOv, valuesTv, chosenOv, chosenTv);
+  } else if (document.getElementById(id).checked == false) {
+    document.getElementById(id).checked = false;
   }
 }
 
