@@ -199,6 +199,13 @@ function fullFilled(valuesOv, valuesTv, chosenOv, chosenTv) {
   console.log("pelimuodon valinnat " + chosenOv + " + " + chosenTv);
 }
 
+function makeBtn() {
+  const btn = document.createElement("button");
+  pos = document.getElementById("rand");
+  btn.innerHTML = "Randomize";
+  pos.append(btn);
+}
+
 function myFunction() {
   x = document.getElementById("gameMode").value;
   if (x == "Harava1") {
@@ -214,6 +221,7 @@ function myFunction() {
 
 function getVal(id, value) {
   if (document.getElementById(id).checked == true) {
+    makeBtn();
     let mode = id;
     let string = value;
     chosenOv = string.charAt(0);
@@ -228,3 +236,7 @@ function getVal(id, value) {
     fullFilled(valuesOv, valuesTv, chosenOv, chosenTv);
   }
 }
+
+// function randomize(valuesOv, valuesTv, chosenOv, chosenTv) {
+
+// }
