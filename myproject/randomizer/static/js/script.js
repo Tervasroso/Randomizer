@@ -236,6 +236,8 @@ function getVal(id, value) {
     fullFilled(valuesOv, valuesTv, chosenOv, chosenTv);
   } else if (document.getElementById(id).checked == false) {
     document.getElementById(id).checked = false;
+    document.getElementById("rand").remove();
+    location.reload();
   }
 }
 
