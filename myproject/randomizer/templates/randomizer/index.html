@@ -13,13 +13,13 @@
       <h1>Vakio</h1>
     </div>
     <div class="container">
-      <div class="divi inline left center">
-        <h4>Vakio 1</h4>
+      <div class="divi inline">
         <div id="gMode" class="showSel"></div>
         <div id="rand" class="btnC"></div>
       </div>
-      <div class="divi inline right"> 
+      <div class="divi inline"> 
         <h4>Valitse pelimuoto (Järjestelmä vai Harava?)</h4>
+        <div class="right">
         <form class="gameMode">
           <label for="gameMode">Valitse pelimuoto:</label>
           <select name="gameMode" id="gameMode" onchange="myFunction()">
@@ -28,6 +28,7 @@
           <option value="Harava2" id="rakeTwo" name="raketwo">Harava -2</option>
           </select>
         </form>
+        </div>
       </div>
     </div>
     <div class="container">
@@ -132,8 +133,8 @@
         </p>
       </div>
       <div class="divi inline right">
-        <div class="formHead divi">
-          * Järjestelmä *
+        <div class="formHead divi" id="formSys">
+          Järjestelmä
         </div>
         <div id="selectFirst" class="selF">
         </div>

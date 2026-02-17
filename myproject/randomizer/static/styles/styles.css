@@ -33,3 +33,13 @@ body {
 .selF {
   padding-top: 10px;
 }
+
+.showSel {
+  border-color: red;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.right {
+  padding-bottom: 10px;
+}

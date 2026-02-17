@@ -1,30 +1,3 @@
-// window.addEventListener("DOMContentLoaded", function () {
-//   let choice = document.querySelectorAll('input[type="radio"]:checked');
-//   let maxAllowed = 1;
-
-//   choice.forEach(function (choice) {
-//     choice.addEventListener("change", function () {
-//       let checkedCount = document.querySelectorAll(
-//         'input[type="radio"]:checked',
-//       ).length;
-//       if (checkedCount > maxAllowed) {
-//         this.checked = false;
-//       }
-//       if (checkedCount == maxAllowed) {
-//         choice.forEach(function (otherCheckbox) {
-//           if (!otherCheckbox.checked) {
-//             otherCheckbox.disabled = true;
-//           }
-//         });
-//       } else {
-//         choice.forEach(function (otherCheckbox) {
-//           otherCheckbox.disabled = false;
-//         });
-//       }
-//     });
-//   });
-// });
-
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Page loaded");
   document.getElementById("selectFirst").innerHTML = `<form>
@@ -72,10 +45,10 @@ const Harava2 = `<form>
   <label for="rake2-70">7+0</label>
   </form>`;
 
-// function showSelected(chosenOv, chosenTv) {
-//   const pos = document.getElementById("gMode");
-//   pos.textContent = chosenOv + " + " + chosenTv;
-// }
+function showSelected(chosenOv, chosenTv) {
+  const set = document.getElementById("gMode");
+  set.innerHTML = chosenOv + " + " + chosenTv;
+}
 
 valuesOv = 0;
 valuesTv = 0;
@@ -208,14 +181,18 @@ function makeBtn() {
 
 function myFunction() {
   x = document.getElementById("gameMode").value;
+  y = document.getElementById("formSys");
   if (x == "Harava1") {
     document.getElementById("selectFirst").innerHTML = Harava1;
+    y.innerHTML = "Harava1";
   }
   if (x == "Harava2") {
     document.getElementById("selectFirst").innerHTML = Harava2;
+    y.innerHTML = "Harava2";
   }
   if (x == "Järjestelmä") {
     document.getElementById("selectFirst").innerHTML = Järjestelmä;
+    y.innerHTML = "Järjestelmä";
   }
 }
 
@@ -234,6 +211,7 @@ function getVal(id, value) {
       // console.log("Järjestelmä " + chosenOv + " + " + chosenTv);
     }
     fullFilled(valuesOv, valuesTv, chosenOv, chosenTv);
+    showSelected(chosenOv, chosenTv);
   } else if (document.getElementById(id).checked == false) {
     document.getElementById(id).checked = false;
     document.getElementById("rand").remove();
