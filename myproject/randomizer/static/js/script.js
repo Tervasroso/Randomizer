@@ -1,48 +1,74 @@
+window.addEventListener("DOMContentLoaded", function () {
+  let checkboxes = document.querySelectorAll(
+    'input[type="checkbox"][class="single-check"]',
+  );
+  let maxAllowed = 1;
+
+  checkboxes.forEach(function (checkbox) {
+    checkbox.addEventListener("change", function () {
+      let checkedCount = document.querySelectorAll(
+        'input[type="checkbox"]:checked[class="single-check"]',
+      ).length;
+      console.log(checkedCount);
+      if (checkedCount > maxAllowed) {
+        this.checked = false;
+      }
+      if (checkedCount == maxAllowed) {
+        checkboxes.forEach(function (otherCheckbox) {
+          if (!otherCheckbox.checked) {
+            otherCheckbox.disabled = true;
+          }
+        });
+      }
+    });
+  });
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Page loaded");
   document.getElementById("selectFirst").innerHTML = `<form>
-  <input type="checkbox" id="s1" value="70" name="choice" onclick="getVal(id, value)">
-  <label for="sys70">7+0</label>
-  <input type="checkbox" id="s2" value="60" name="choice" onclick="getVal(id, value)">
-  <label for="sys60">6+0</label>
-  <input type="checkbox" id="s3" value="51" name="choice" onclick="getVal(id, value)">
-  <label for="sys60">5+1</label>
-  <input type="checkbox" id="s4" value="41" name="choice" onclick="getVal(id, value)">
-  <label for="sys60">4+1</label>
-  <input type="checkbox" id="s5" value="32" name="choice" onclick="getVal(id, value)">
-  <label for="sys60">3+2</label>
-  <input type="checkbox" id="s6" value="04" name="choice" onclick="getVal(id, value)">
-  <label for="sys60">0+4</label>
-  <input type="checkbox" id="s7" value="53" name="choice" onclick="getVal(id, value)">
-  <label for="sys60">5+3</label>
+  <input type="checkbox" id="s1" value="70" name="choice" class="single-check" onclick="getVal(id, value)">
+  <label for="s1">7+0</label>
+  <input type="checkbox" id="s2" value="60" name="choice" class="single-check" onclick="getVal(id, value)">
+  <label for="s2">6+0</label>
+  <input type="checkbox" id="s3" value="51" name="choice" class="single-check" onclick="getVal(id, value)">
+  <label for="s3">5+1</label>
+  <input type="checkbox" id="s4" value="41" name="choice" class="single-check" onclick="getVal(id, value)">
+  <label for="s4">4+1</label>
+  <input type="checkbox" id="s5" value="32" name="choice" class="single-check" onclick="getVal(id, value)">
+  <label for="s5">3+2</label>
+  <input type="checkbox" id="s6" value="04" name="choice" class="single-check" onclick="getVal(id, value)">
+  <label for="s6">0+4</label>
+  <input type="checkbox" id="s7" value="53" name="choice" class="single-check" onclick="getVal(id, value)">
+  <label for="s7">5+3</label>
   </form>`;
 });
 
 const Järjestelmä = `<form>
-  <input type="checkbox" id="s1" value="70" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s1" value="70" name="choice" class="single-check" onclick="getVal(id, value)">
   <label for="sys70">7+0</label>
-  <input type="checkbox" id="s2" value="60" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s2" value="60" name="choice" class="single-check" onclick="getVal(id, value)">
   <label for="sys60">6+0</label>
-  <input type="checkbox" id="s3" value="51" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s3" value="51" name="choice" class="single-check" onclick="getVal(id, value)">
   <label for="sys60">5+1</label>
-  <input type="checkbox" id="s4" value="41" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s4" value="41" name="choice" class="single-check" onclick="getVal(id, value)">
   <label for="sys60">4+1</label>
-  <input type="checkbox" id="s5" value="32" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s5" value="32" name="choice" class="single-check" onclick="getVal(id, value)">
   <label for="sys60">3+2</label>
-  <input type="checkbox" id="s6" value="04" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s6" value="04" name="choice" class="single-check" onclick="getVal(id, value)">
   <label for="sys60">0+4</label>
-  <input type="checkbox" id="s7" value="53" name="choice" onclick="getVal(id, value)">
+  <input type="checkbox" id="s7" value="53" name="choice" class="single-check" onclick="getVal(id, value)">
   <label for="sys60">5+3</label>
   </form>`;
 
 const Harava1 = `<form>
-  <input type="checkbox" id="rake11" value="70" name="choice" onclick="getVal(id, value)">
-  <label for="rake1-70">7+0</label>
+  <input type="checkbox" id="rake11" value="70" name="choice" class="single-check" onclick="getVal(id, value)">
+  <label for="rake11">7+0</label>
   </form>`;
 
 const Harava2 = `<form>
-  <input type="checkbox" id="rake21" value="70" name="choice" onclick="getVal(id, value)">
-  <label for="rake2-70">7+0</label>
+  <input type="checkbox" id="rake21" value="70" name="choice" class="single-check" onclick="getVal(id, value)">
+  <label for="rake21">7+0</label>
   </form>`;
 
 function showSelected(chosenOv, chosenTv) {
@@ -50,11 +76,12 @@ function showSelected(chosenOv, chosenTv) {
   set.innerHTML = chosenOv + " + " + chosenTv;
 }
 
-valuesOv = 0;
-valuesTv = 0;
-
+let valuesOv = 0;
+let valuesTv = 0;
 let chosenOv = 0;
 let chosenTv = 0;
+
+const btn = document.createElement("button");
 
 let ov = {
   A: 0,
@@ -173,7 +200,6 @@ function fullFilled(valuesOv, valuesTv, chosenOv, chosenTv) {
 }
 
 function makeBtn() {
-  const btn = document.createElement("button");
   pos = document.getElementById("rand");
   btn.innerHTML = "Randomize";
   pos.append(btn);
@@ -219,6 +245,7 @@ function getVal(id, value) {
   }
 }
 
-// function randomize(valuesOv, valuesTv, chosenOv, chosenTv) {
-
-// }
+btn.addEventListener(
+  "click",
+  function (valuesOv, valuesTv, chosenOv, chosenTv) {},
+);
