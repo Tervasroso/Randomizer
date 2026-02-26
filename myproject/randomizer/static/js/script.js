@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", function () {
       if (checkedCount == maxAllowed) {
         checkboxes.forEach(function (otherCheckbox) {
           if (!otherCheckbox.checked) {
-            otherCheckbox.disabled = true;
+            otherCheckbox.checked = false;
           }
         });
       }
@@ -199,12 +199,6 @@ function fullFilled(valuesOv, valuesTv, chosenOv, chosenTv) {
   console.log("pelimuodon valinnat " + chosenOv + " + " + chosenTv);
 }
 
-function makeBtn() {
-  pos = document.getElementById("rand");
-  btn.innerHTML = "Randomize";
-  pos.append(btn);
-}
-
 function myFunction() {
   x = document.getElementById("gameMode").value;
   y = document.getElementById("formSys");
@@ -238,14 +232,14 @@ function getVal(id, value) {
     }
     fullFilled(valuesOv, valuesTv, chosenOv, chosenTv);
     showSelected(chosenOv, chosenTv);
-  } else if (document.getElementById(id).checked == false) {
+  }
+  if (document.getElementById(id).checked == false) {
     document.getElementById(id).checked = false;
-    document.getElementById("rand").remove();
-    location.reload();
   }
 }
 
-btn.addEventListener(
-  "click",
-  function (valuesOv, valuesTv, chosenOv, chosenTv) {},
-);
+if (valuesOv == chosenOv && valuesTv == chosenTv) {
+  console.log(
+    valuesOv + " + " + valuesTv + " + " + chosenOv + " + " + chosenTv,
+  );
+}

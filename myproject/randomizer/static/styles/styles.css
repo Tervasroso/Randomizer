@@ -35,12 +35,15 @@ body {
 }
 
 .showSel {
-  border-color: red;
   padding-top: 10px;
   padding-bottom: 10px;
+  border-style: solid;
+  border-color: red;
 }
 
-.right {
-  padding-top: 14px;
-  padding-bottom: 14px;
+.btnC {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-style: solid;
+  border-color: blue;
 }
