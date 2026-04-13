@@ -81,8 +81,6 @@ let valuesTv = 0;
 let chosenOv = 0;
 let chosenTv = 0;
 
-const btn = document.createElement("button");
-
 let ov = {
   A: 0,
   B: 0,
@@ -129,6 +127,20 @@ var rows = [
   { group: "L", L1: 0, L2: 0, L3: 0 },
   { group: "M", M1: 0, M2: 0, M3: 0 },
 ];
+
+function generateRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function shuffleArray(array) {
+  for (let i = 0; i < array.length; i++) {
+    let tempNumber = array[i];
+    let randomIndex = generateRandomNumber(0, array.length - 1);
+    array[i] = array[randomIndex];
+    array[randomIndex] = tempNumber;
+  }
+  return array;
+}
 
 function checkBox(id, name) {
   document.getElementById(id).checked = true;
@@ -218,7 +230,7 @@ function myFunction() {
 
 function getVal(id, value) {
   if (document.getElementById(id).checked == true) {
-    makeBtn();
+    rand.style.removeProperty("display");
     let mode = id;
     let string = value;
     chosenOv = string.charAt(0);

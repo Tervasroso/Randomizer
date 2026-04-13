@@ -47,3 +47,7 @@ body {
   border-style: solid;
   border-color: blue;
 }
+
+.hide {
+  display: none;
+}
