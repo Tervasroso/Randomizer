@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", function () {
       let checkedCount = document.querySelectorAll(
         'input[type="checkbox"]:checked[class="single-check"]',
       ).length;
-      console.log(checkedCount);
+      //console.log(checkedCount);
       if (checkedCount > maxAllowed) {
         this.checked = false;
       }
@@ -128,20 +128,6 @@ var rows = [
   { group: "M", M1: 0, M2: 0, M3: 0 },
 ];
 
-function generateRandomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-function shuffleArray(array) {
-  for (let i = 0; i < array.length; i++) {
-    let tempNumber = array[i];
-    let randomIndex = generateRandomNumber(0, array.length - 1);
-    array[i] = array[randomIndex];
-    array[randomIndex] = tempNumber;
-  }
-  return array;
-}
-
 function checkBox(id, name) {
   document.getElementById(id).checked = true;
   for (let i = 0; i < rows.length; i++) {
@@ -192,6 +178,7 @@ function select(name) {
 
 function ifChecked(id, name) {
   if (document.getElementById(id).checked == true) {
+    console.log(id + " " + name);
     checkBox(id, name);
     select(name);
     valuesOv = countSelected(Object.values(ov));
@@ -254,4 +241,48 @@ if (valuesOv == chosenOv && valuesTv == chosenTv) {
   console.log(
     valuesOv + " + " + valuesTv + " + " + chosenOv + " + " + chosenTv,
   );
+}
+
+function generateOneTwoThree() {
+  return Math.floor(Math.random() * 3);
+}
+
+function generateRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function shuffleArray(rows) {
+  array = rows;
+  for (let i = 0; i < array.length; i++) {
+    let tempNumber = array[i];
+    let randomIndex = generateRandomNumber(0, array.length - 1);
+    array[i] = array[randomIndex];
+    array[randomIndex] = tempNumber;
+  }
+  // console.log(array);
+  return array;
+}
+
+function randomize(rows) {
+  while (valuesOv != chosenOv || valuesTv != chosenTv) {
+    if (valuesOv == chosenOv && valuesTv == chosenTv) {
+      break;
+    }
+    array = shuffleArray(rows);
+    for (let i = 0; i < array.length; i++) {
+      let place = generateOneTwoThree(); // arvotaan tarkasteltava indeksi.
+      let shoot = generateRandomNumber(0, 1); // arvotaan joko 0 tai 1.
+      let key = Object.keys(array[i])[place];
+      let values = Object.values(array[i])[place];
+      if (values != 0) {
+        continue;
+        array = shuffleArray(rows);
+      }
+      if (values == 0 && shoot == 1) {
+        document.getElementById(key).checked = true;
+        ifChecked(key, array[i].group);
+        console.log(key + " " + array[i].group);
+      }
+    }
+  }
 }
